@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bai3</title>
+</head>
+<body>
+<!--Bai 3-->
+    <h3>Bai 3</h3>
+    <p id="bai3"></p>
+<!--Bai 4: Tim so dau tien chia het cho 5-->
+    <h3>Bai 4</h3>
+    <p id="bai4"></p>
+<!--Bai 5: Tinhs tong 20 so dau tien-->
+    <h3>Bai 5</h3>
+    <p id="bai5"></p>
+<script>
+    function fibonacci(num){
+        if(num<=1) return 1
+        else return fibonacci(num-1) + fibonacci(num-2);
+    }
+    //Bai 3
+    let display ='';
+    for(i=0;i<=20;i++){
+        display += fibonacci(i)+' ';
+    }
+    document.getElementById('bai3').innerHTML = display;
+    //Bai 4
+    for(i=0;i<=20;i++){
+       if(fibonacci(i)%5==0){
+           document.getElementById('bai4').innerHTML = fibonacci(i);
+           break;
+       }
+    }
+    // Bai 5
+    let sum = null;
+    for(i=0;i<=20;i++){
+        sum += fibonacci(i)
+    }
+    document.getElementById('bai5').innerHTML = sum;
+    // Bai 6
+    let count1 = 0;
+    let number1 = 0;
+    let sum1 = null;
+    while (count1<=29){
+        if(number1%7==0){
+            sum1 +=number1;
+            count1++;
+            console.log (number1);
+        }
+        number1++;
+    }
+    document.write(sum1);
+</script>
+</body>
+</html>

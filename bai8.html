@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ggame_doan_so</title>
+</head>
+<body>
+    <button type="button" id="playGame">Play</button>
+<script>
+    document.getElementById('playGame').addEventListener('click',play);
+    function play(){
+        // prompt('Ban muon doan trong khoang nao');
+        let num1 = parseInt(prompt('Giá trị nhỏ nhất trong khoảng bạn muốn đoán'));
+        let num2 = parseInt(prompt('Giá trị lớn nhất trong khoảng bạn muốn đoán'));
+        let num3 = getRnd(num1,num2);
+        console.log(num3);
+        do {
+            value = parseInt(prompt('Hay chon mot so'));
+            if(value<num3){
+                alert('lon hon');
+            }
+            if(value>num3){
+                alert('be hon');
+            }
+            if(value == num3){
+                alert('You won');
+            }
+        }
+        while (value!= num3);
+    }
+    function getRnd(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+</script>
+</body>
+</html>
